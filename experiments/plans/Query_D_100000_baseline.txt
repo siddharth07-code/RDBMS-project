@@ -1,0 +1,4 @@
+-> Limit: 100 row(s)  (cost=10107 rows=100) (actual time=24.6..24.6 rows=100 loops=1)
+    -> Sort: transactions.transaction_timestamp DESC, limit input to 100 row(s) per chunk  (cost=10107 rows=99704) (actual time=24.6..24.6 rows=100 loops=1)
+        -> Filter: ((transactions.`status` = 'SUCCESS') and (transactions.transaction_timestamp >= TIMESTAMP'2026-10-05 00:00:00') and (transactions.transaction_timestamp <= TIMESTAMP'2026-10-08 23:59:59'))  (cost=10107 rows=99704) (actual time=5.82..21.8 rows=26722 loops=1)
+            -> Table scan on transactions  (cost=10107 rows=99704) (actual time=0.063..11.6 rows=100000 loops=1)

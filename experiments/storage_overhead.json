@@ -1,0 +1,146 @@
+[
+  {
+    "scale": 10000,
+    "config": "Baseline",
+    "tables": [
+      {
+        "TABLE_NAME": "accounts",
+        "data_kb": "96.00",
+        "index_kb": "112.00",
+        "total_kb": "208.00"
+      },
+      {
+        "TABLE_NAME": "customers",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_alerts",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_rules",
+        "data_kb": "16.00",
+        "index_kb": "16.00",
+        "total_kb": "32.00"
+      },
+      {
+        "TABLE_NAME": "transactions",
+        "data_kb": "16.00",
+        "index_kb": "48.00",
+        "total_kb": "64.00"
+      }
+    ]
+  },
+  {
+    "scale": 10000,
+    "config": "Indexed",
+    "tables": [
+      {
+        "TABLE_NAME": "accounts",
+        "data_kb": "96.00",
+        "index_kb": "112.00",
+        "total_kb": "208.00"
+      },
+      {
+        "TABLE_NAME": "customers",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_alerts",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_rules",
+        "data_kb": "16.00",
+        "index_kb": "16.00",
+        "total_kb": "32.00"
+      },
+      {
+        "TABLE_NAME": "transactions",
+        "data_kb": "16.00",
+        "index_kb": "48.00",
+        "total_kb": "64.00"
+      }
+    ]
+  },
+  {
+    "scale": 100000,
+    "config": "Baseline",
+    "tables": [
+      {
+        "TABLE_NAME": "accounts",
+        "data_kb": "96.00",
+        "index_kb": "112.00",
+        "total_kb": "208.00"
+      },
+      {
+        "TABLE_NAME": "customers",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_alerts",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_rules",
+        "data_kb": "16.00",
+        "index_kb": "16.00",
+        "total_kb": "32.00"
+      },
+      {
+        "TABLE_NAME": "transactions",
+        "data_kb": "16.00",
+        "index_kb": "48.00",
+        "total_kb": "64.00"
+      }
+    ]
+  },
+  {
+    "scale": 100000,
+    "config": "Indexed",
+    "tables": [
+      {
+        "TABLE_NAME": "accounts",
+        "data_kb": "96.00",
+        "index_kb": "112.00",
+        "total_kb": "208.00"
+      },
+      {
+        "TABLE_NAME": "customers",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_alerts",
+        "data_kb": "16.00",
+        "index_kb": "32.00",
+        "total_kb": "48.00"
+      },
+      {
+        "TABLE_NAME": "fraud_rules",
+        "data_kb": "16.00",
+        "index_kb": "16.00",
+        "total_kb": "32.00"
+      },
+      {
+        "TABLE_NAME": "transactions",
+        "data_kb": "16.00",
+        "index_kb": "48.00",
+        "total_kb": "64.00"
+      }
+    ]
+  }
+]

@@ -157,7 +157,7 @@ RDBMS-project/
 - [x] **Phase 4**: Physical SQL schema implementation, strict constraints, and realistic seed data.
 - [x] **Phase 5**: Express backend API service and MySQL integration.
 - [x] **Phase 6**: React dashboard and triage investigation interface.
-- [ ] **Phase 7**: Structured query performance experiments and execution plan analysis.
+- [x] **Phase 7**: Structured query performance experiments and execution plan analysis.
 - [ ] **Phase 8**: Integration testing, edge-case validation, and refinement.
 - [ ] **Phase 9**: Final research paper and project defense deliverables.
 
@@ -265,3 +265,23 @@ The application will launch on `http://localhost:3000` with the API proxy routin
 ```bash
 npm run build
 ```
+
+---
+
+## 15. Query Performance Experiments (Phase 7)
+
+### Research Question
+*"How does database indexing affect the execution performance of SQL-based suspicious transaction detection queries in MySQL under varying transaction scale factors?"*
+
+### Running the Experiments
+All experiments run strictly against an isolated benchmark database (`fraudlens_benchmark`) to protect production data:
+```bash
+NODE_PATH=./backend/node_modules node experiments/run_benchmarks.js
+```
+
+### Experiment Artifacts
+- **Raw Measurements**: [experiments/results.csv](file:///Users/siddharthlal/Desktop/fraudlens/experiments/results.csv) (120 individual execution timings with warm-up and measured runs).
+- **Metric Summaries**: [experiments/summary.csv](file:///Users/siddharthlal/Desktop/fraudlens/experiments/summary.csv) (medians, min/max, standard deviations, and percentage speedup calculations).
+- **Physical Query Plans**: [experiments/plans/](file:///Users/siddharthlal/Desktop/fraudlens/experiments/plans/) (10 `EXPLAIN ANALYZE` outputs across baseline and indexed tiers).
+- **Storage Overhead**: [experiments/storage_overhead.json](file:///Users/siddharthlal/Desktop/fraudlens/experiments/storage_overhead.json).
+- **Comprehensive Analysis**: [docs/PERFORMANCE_ANALYSIS.md](file:///Users/siddharthlal/Desktop/fraudlens/docs/PERFORMANCE_ANALYSIS.md).

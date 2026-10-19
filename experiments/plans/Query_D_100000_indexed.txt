@@ -1,0 +1,2 @@
+-> Limit: 100 row(s)  (cost=10107 rows=100) (actual time=0.383..0.392 rows=100 loops=1)
+    -> Index range scan on transactions using idx_tx_status_timestamp over (status = 'SUCCESS' AND '2026-10-05 00:00:00' <= transaction_timestamp <= '2026-10-08 23:59:59') (reverse), with index condition: ((transactions.`status` = 'SUCCESS') and (transactions.transaction_timestamp >= TIMESTAMP'2026-10-05 00:00:00') and (transactions.transaction_timestamp <= TIMESTAMP'2026-10-08 23:59:59'))  (cost=10107 rows=49852) (actual time=0.383..0.388 rows=100 loops=1)

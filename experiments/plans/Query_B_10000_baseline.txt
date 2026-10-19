@@ -1,0 +1,12 @@
+-> Limit: 50 row(s)  (actual time=25.8..25.8 rows=50 loops=1)
+    -> Sort: tx_window_count DESC  (actual time=25.8..25.8 rows=50 loops=1)
+        -> Filter: (`count(t2.transaction_id)` >= 3)  (actual time=25.2..25.8 rows=168 loops=1)
+            -> Table scan on <temporary>  (actual time=25.1..25.6 rows=9294 loops=1)
+                -> Aggregate using temporary table  (actual time=25.1..25.1 rows=9294 loops=1)
+                    -> Filter: ((t2.transaction_timestamp <= t1.transaction_timestamp) and (t2.transaction_timestamp >= (t1.transaction_timestamp - interval 5 minute)))  (cost=71331 rows=19282) (actual time=1.92..21.6 rows=9934 loops=1)
+                        -> Inner hash join (t2.source_account_id = t1.source_account_id)  (cost=71331 rows=19282) (actual time=1.91..7.71 rows=118146 loops=1)
+                            -> Filter: (t2.`status` = 'SUCCESS')  (cost=0.371 rows=278) (actual time=0.0396..1.67 rows=9294 loops=1)
+                                -> Table scan on t2  (cost=0.371 rows=10000) (actual time=0.0394..0.989 rows=10000 loops=1)
+                            -> Hash
+                                -> Filter: (t1.`status` = 'SUCCESS')  (cost=1000 rows=2500) (actual time=0.0406..1.42 rows=9294 loops=1)
+                                    -> Table scan on t1  (cost=1000 rows=10000) (actual time=0.0396..0.837 rows=10000 loops=1)

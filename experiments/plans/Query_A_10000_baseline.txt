@@ -1,0 +1,3 @@
+-> Sort: transactions.amount DESC  (cost=1000 rows=10000) (actual time=1.35..1.36 rows=84 loops=1)
+    -> Filter: (transactions.amount > 25000.00)  (cost=1000 rows=10000) (actual time=0.0687..1.34 rows=84 loops=1)
+        -> Table scan on transactions  (cost=1000 rows=10000) (actual time=0.0518..1.01 rows=10000 loops=1)

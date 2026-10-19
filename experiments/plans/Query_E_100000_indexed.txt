@@ -1,0 +1,12 @@
+-> Limit: 50 row(s)  (actual time=6.1..6.11 rows=50 loops=1)
+    -> Sort: a.risk_score DESC, a.triggered_at DESC, limit input to 50 row(s) per chunk  (actual time=6.1..6.11 rows=50 loops=1)
+        -> Stream results  (cost=3619 rows=3286) (actual time=0.768..5.71 rows=3286 loops=1)
+            -> Nested loop inner join  (cost=3619 rows=3286) (actual time=0.765..4.46 rows=3286 loops=1)
+                -> Nested loop inner join  (cost=2469 rows=3286) (actual time=0.762..3.27 rows=3286 loops=1)
+                    -> Inner hash join (r.rule_id = a.rule_id)  (cost=1319 rows=3286) (actual time=0.755..0.877 rows=3286 loops=1)
+                        -> Table scan on r  (cost=137e-6 rows=3) (actual time=0.00237..0.00321 rows=3 loops=1)
+                        -> Hash
+                            -> Filter: ((a.`status` = 'PENDING') and (a.risk_score >= 75.00))  (cost=333 rows=3286) (actual time=0.00958..0.625 rows=3286 loops=1)
+                                -> Table scan on a  (cost=333 rows=3286) (actual time=0.00858..0.346 rows=3286 loops=1)
+                    -> Single-row index lookup on t using PRIMARY (transaction_id = a.transaction_id)  (cost=0.25 rows=1) (actual time=584e-6..601e-6 rows=1 loops=3286)
+                -> Single-row index lookup on src using PRIMARY (account_id = t.source_account_id)  (cost=0.25 rows=1) (actual time=263e-6..280e-6 rows=1 loops=3286)

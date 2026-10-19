@@ -1,0 +1,1 @@
+-> Index range scan on transactions using idx_tx_amount over (25000.00 < amount) (reverse), with index condition: (transactions.amount > 25000.00)  (cost=367 rows=816) (actual time=0.0968..0.702 rows=816 loops=1)
