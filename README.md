@@ -156,7 +156,7 @@ RDBMS-project/
 - [x] **Phase 3**: Conceptual modeling (ER diagram), functional dependencies, and normalization proofs.
 - [x] **Phase 4**: Physical SQL schema implementation, strict constraints, and realistic seed data.
 - [x] **Phase 5**: Express backend API service and MySQL integration.
-- [ ] **Phase 6**: React dashboard and triage investigation interface.
+- [x] **Phase 6**: React dashboard and triage investigation interface.
 - [ ] **Phase 7**: Structured query performance experiments and execution plan analysis.
 - [ ] **Phase 8**: Integration testing, edge-case validation, and refinement.
 - [ ] **Phase 9**: Final research paper and project defense deliverables.
@@ -247,12 +247,21 @@ npm test
 
 ---
 
-## 14. Frontend Application Execution Instructions (Pending Implementation)
+## 14. Frontend Application Execution Instructions
 
-> **Status: PENDING PHASE 6**
+### 1. Install Dependencies
+```bash
+cd frontend
+npm install
+```
 
-### Setup Steps (Pending Phase 6)
-1. Run frontend interface:
-   ```bash
-   cd frontend && npm install && npm run dev
-   ```
+### 2. Run the React Vite Dev Server
+```bash
+npm run dev
+```
+The application will launch on `http://localhost:3000` with the API proxy routing requests to `http://localhost:5001/api`.
+
+### 3. Build Production Bundle
+```bash
+npm run build
+```
