@@ -1,0 +1,69 @@
+{
+  "test_suite": "FraudLens Phase 8 Integration & Edge-Case Validation",
+  "timestamp": "2026-10-19T09:49:00.000Z",
+  "database_target": "fraudlens_db (isolated tests via transactional rollback)",
+  "results": {
+    "backend_api_integration_tests": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0,
+      "test_cases": [
+        "GET /api/health returns UP and CONNECTED",
+        "GET /api/dashboard/summary returns exact transactions (10000) and alerts (507)",
+        "GET /api/dashboard/transaction-trends returns daily trends",
+        "GET /api/dashboard/alerts-by-rule returns 3 active rules",
+        "GET /api/transactions paginates and filters by status=SUCCESS",
+        "GET /api/transactions searches by reference",
+        "GET /api/transactions resists SQL injection in search parameter",
+        "GET /api/transactions/:id returns transaction with customer and account joins",
+        "GET /api/transactions/999999 returns 404",
+        "GET /api/transactions/invalid-id returns 400",
+        "GET /api/alerts paginates and lists pending alerts",
+        "GET /api/alerts/:id returns alert details with rule and transaction details",
+        "PATCH /api/alerts/:id/status updates status to REVIEWED",
+        "PATCH /api/alerts/:id/status rejects invalid status enum",
+        "PATCH /api/alerts/999999/status returns 404",
+        "Restoration of test alert state to clean baseline",
+        "GET /api/research/fraud-metrics returns exact confusion matrix & metrics",
+        "GET /api/research/rule-performance returns per-rule metrics",
+        "Unknown endpoint returns 404"
+      ]
+    },
+    "detection_edge_cases": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "test_cases": [
+        "Schema rejects negative transaction amount",
+        "Schema rejects zero transaction amount (amount > 0 constraint)",
+        "Schema rejects self-transfer (source_account_id <> destination_account_id)",
+        "Schema rejects invalid foreign key account references",
+        "High-value rule strictly flags amount > 10000.00 (skips 9999.99 and exact 10000.00)",
+        "Rapid successive rule triggers on 3 txs within 5 min but skips spread txs",
+        "Transaction simultaneously qualifies for multiple active rules",
+        "Detection rules ignore FAILED and BLOCKED transactions per documented compliance semantics"
+      ]
+    },
+    "phase_7_artifact_audit": {
+      "raw_records": 120,
+      "warmup_runs": 20,
+      "measured_runs": 100,
+      "summary_rows": 10,
+      "mismatches": 0,
+      "status": "VERIFIED_ACCURATE"
+    },
+    "database_invariants": {
+      "customers_initial": 500,
+      "customers_final": 500,
+      "accounts_initial": 800,
+      "accounts_final": 800,
+      "transactions_initial": 10000,
+      "transactions_final": 10000,
+      "fraud_rules_initial": 3,
+      "fraud_rules_final": 3,
+      "fraud_alerts_initial": 507,
+      "fraud_alerts_final": 507,
+      "status": "UNTOUCHED"
+    }
+  }
+}

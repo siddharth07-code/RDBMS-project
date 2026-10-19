@@ -158,7 +158,7 @@ RDBMS-project/
 - [x] **Phase 5**: Express backend API service and MySQL integration.
 - [x] **Phase 6**: React dashboard and triage investigation interface.
 - [x] **Phase 7**: Structured query performance experiments and execution plan analysis.
-- [ ] **Phase 8**: Integration testing, edge-case validation, and refinement.
+- [x] **Phase 8**: Integration testing, edge-case validation, and refinement.
 - [ ] **Phase 9**: Final research paper and project defense deliverables.
 
 ---
