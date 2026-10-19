@@ -155,12 +155,11 @@ RDBMS-project/
 - [x] **Phase 2**: Dedicated MySQL Docker configuration and connectivity verification.
 - [x] **Phase 3**: Conceptual modeling (ER diagram), functional dependencies, and normalization proofs.
 - [x] **Phase 4**: Physical SQL schema implementation, strict constraints, and realistic seed data.
-- [ ] **Phase 5**: SQL-based fraud detection procedures, views, and alert generation.
-- [ ] **Phase 6**: Express backend API service and connection pooling.
-- [ ] **Phase 7**: React dashboard and triage investigation interface.
-- [ ] **Phase 8**: Structured query performance experiments and execution plan analysis.
-- [ ] **Phase 9**: Integration testing, edge-case validation, and refinement.
-- [ ] **Phase 10**: Final research paper and project defense deliverables.
+- [x] **Phase 5**: Express backend API service and MySQL integration.
+- [ ] **Phase 6**: React dashboard and triage investigation interface.
+- [ ] **Phase 7**: Structured query performance experiments and execution plan analysis.
+- [ ] **Phase 8**: Integration testing, edge-case validation, and refinement.
+- [ ] **Phase 9**: Final research paper and project defense deliverables.
 
 ---
 
@@ -227,20 +226,33 @@ docker exec -it fraudlens-mysql mysql -u fraudlens_user -p fraudlens_db
 
 ---
 
-## 13. Application Execution Instructions (Pending Implementation)
+## 13. Backend API Service Execution
 
-> **Status: PENDING PHASES 4–7**
+### 1. Install Dependencies
+```bash
+cd backend
+npm install
+```
 
-### Setup Steps (Pending Future Phases)
-1. Initialize database schema & seed data (Pending Phase 4):
-   ```bash
-   # Commands will be documented in Phase 4
-   ```
-2. Run backend server (Pending Phase 6):
-   ```bash
-   cd backend && npm install && npm run dev
-   ```
-3. Run frontend interface (Pending Phase 7):
+### 2. Run the Express Backend Server
+```bash
+npm run dev
+```
+The server will start on port `5001` (or the `PORT` specified in `.env`) and automatically connect to `fraudlens_db` via the connection pool.
+
+### 3. Run Automated Backend Tests
+```bash
+npm test
+```
+
+---
+
+## 14. Frontend Application Execution Instructions (Pending Implementation)
+
+> **Status: PENDING PHASE 6**
+
+### Setup Steps (Pending Phase 6)
+1. Run frontend interface:
    ```bash
    cd frontend && npm install && npm run dev
    ```
